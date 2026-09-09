@@ -284,4 +284,5 @@ JNG - Jump if not greater
 
 ## Jump and Compare Instructions
 1. Get input number from the user. While the number is greater than 0, print "Hello world" and keep decrementing the number.
+   * [See code here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/7bd2f8607524b8d30216ce37dadc7f917ce1f73c/Main/Loop%201/loop1.asm)
    
