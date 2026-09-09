@@ -185,3 +185,6 @@ MUL source
 * Used to multiply <b>signed</b> data together.
 * Multiplies source operand and immediate operand.
 * The product is stored in the destination register as well as <code>EDX:EAX</code>
+```
+IMUL destination, source, immediate
+```
