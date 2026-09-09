@@ -45,3 +45,142 @@ _start:
 PUBLIC _start ; Export the _start label
 END ; End of assembly file
 ```
+### Some Assembly Basic Instructions
+```
+MOV Instruction
+XCHG Instruction
+ADD Instruction
+INC Instruction
+SUB Instruction
+DEC Instruction
+NEG Instruction
+MUL Instruction
+IMUL Instruction
+DIV Instruction
+IDIV Instruction
+```
+* Some instructions modify the flag register <code>EFLAGS</code>.
+* When an instruction modifies a flag register, it means the CPU automatically updates one or more flags in the <code>FLAGS/EFLAGS</code> register to reflect the result of that instruction.
+* They function more like status report about the last operation.
+* Example:
+```
+MOV AX, 5
+SUB AX, 5
+```
+* After the substraction:
+```
+AX = 0
+ZF = 1
+```
+* The <code>SUB</code> instruction modifies the zero flag (<code>ZF</code>) because the result was zero.
+* Some example of flag registers:
+```
+OF - Overflow flag
+DF - Direction flag
+IF - Interrupt flag
+SF - Sign flag
+ZF - Zero flag
+AF - Auxiliary carry flag
+PF - Parity flag
+CF - Carry flag
+```
+  
+### <code>MOV</code> Instruction
+* The <code>MOV</code> Instruction is used to copy data from one place to another place.
+```
+MOV destination, source
+```
+* Does not modify any flags
+
+### <code>XCHG</code> instruction
+* Used to swap data from one place to another
+```
+XCHG destination, source
+```
+* Does not modify any flags
+
+### <code>ADD</code> Instruction
+* Used to add data.
+* A source operand is added to a destination operand, the result is stored in the destination operand.
+* The result is also present in <code>EAX</code>.
+```
+ADD destination, source
+```
+* Flags modified:
+```
+OF
+SF
+ZF
+AF
+PF
+CF
+```
+
+### <code>INC</code> Instruction
+* Used to increment a register or memory location by 1.
+```
+INC source
+```
+* Flags modified:
+```
+OF
+SF
+ZF
+AF
+PF
+```
+
+### <code>SUB</code> Instruction
+* Used to subtract data.
+* A source operand is substracted from a destination operand, the result is stored in the destination operand.
+* The result is also present in <code>EAX</code>.
+```
+SUB destination, source
+```
+* Flags modified:
+```
+OF
+SF
+ZF
+AF
+PF
+CF
+```
+
+### <code>DEC</code> Instruction
+* Used to decrement a register or memory location.
+```
+DEC source
+```
+* Flags modified:
+```
+OF
+SF
+ZF
+AF
+PF
+```
+
+### <code>NEG</code> Instruction
+* Used to negate signed data
+```
+NEG destination
+```
+* Flags modified:
+```
+SF
+ZF
+```
+
+### <code>MUL</code> Instruction
+* Used to multiply <b>unsigned</b> data together.
+* Multiplies <code>EAX</code> by a source operand.
+* The product is stored in <code>EDX:EAX</code>
+```
+MUL source
+```
+
+### <code>IMUL</code> Instruction
+* Used to multiply <b>signed</b> data together.
+* Multiplies source operand and immediate operand.
+* The product is stored in the destination register as well as <code>EDX:EAX</code>
