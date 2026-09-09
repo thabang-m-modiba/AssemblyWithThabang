@@ -188,3 +188,4 @@ MUL source
 ```
 IMUL destination, source, immediate
 ```
+* Check illustrations [Here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/60875c63c89ffdc8ec51884af51c28a7b297c42b/Main/IMUL%20Instruction/imul.asm)
