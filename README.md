@@ -179,8 +179,12 @@ ZF
 ```
 MUL source
 ```
+* Check illustrations [Here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/87a61d78132e38b0410e2750b53a4250727a6f71/Main/MUL%20Instruction/multiplication.asm)
 
 ### <code>IMUL</code> Instruction
 * Used to multiply <b>signed</b> data together.
 * Multiplies source operand and immediate operand.
 * The product is stored in the destination register as well as <code>EDX:EAX</code>
+```
+IMUL destination, source, immediate
+```
