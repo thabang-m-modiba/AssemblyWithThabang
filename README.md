@@ -281,3 +281,7 @@ JNG - Jump if not greater
 ## Input and Output
 1. Getting data from the user and displaying the data on the terminal.
 * [See details](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/38182eea3682547ec8d30b5a0d3197c6ace12e1d/Main/User%20Inputs%20and%20Outputs/IOprofile.asm)
+
+## Jump and Compare Instructions
+1. Get input number from the user. While the number is greater than 0, print "Hello world" and keep decrementing the number.
+   
