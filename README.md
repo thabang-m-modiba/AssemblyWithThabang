@@ -211,3 +211,13 @@ CDQ ; Convert doubleword to quadword
 ```
 DIV divisor
 ```
+* See illustrations [Here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/0fe147f2278d94867399d01a9627e379a563a342/Main/DIV%20Instruction/div.asm)
+
+#### <code>IDIV</code> Instruction
+* Used to divide signed data.
+* <code>IDIV</code> is essential to divide a 64-bit number with a 32-bit divisor.
+* <code>EDX</code> contains the higher bits, and <code>EAX</code> contains the lower bits.
+```
+IDIV divisor
+```
+* The result is split with <code>EAX</code> containing the quotient and <code>EDX</code> containing the remainder.
