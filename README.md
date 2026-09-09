@@ -275,6 +275,8 @@ JLE - Jump if less or equal
 JNG - Jump if not greater
 ```
 
+* <code>CMP</code> is followed by a jump instruction.
+
 # Mini Projects
 ## Input and Output
 1. Getting data from the user and displaying the data on the terminal.
