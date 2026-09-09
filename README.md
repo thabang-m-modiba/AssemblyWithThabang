@@ -198,7 +198,12 @@ IMUL destination, source, immediate
 
 * <b>Signed integer division</b> is a bit more complicated since the sign can be problematic.
 * The sign may have to be extended over <code>EDX</code>, for instance, if <code>EAX</code> contains -5, the sign must be expanded over to <code>EDX</code>.
-* The <code>CBW, CWD and CDG</code> instruction can be used to extend the sign.
+* Instructions used to extend the sign:
+```
+CBW ; Convert byte to word
+CWD ; Convert word to doubleword
+CDQ ; Convert doubleword to quadword
+```
 
 #### <code>DIV</code> Instruction
 * Used to divide an unsigned integer
