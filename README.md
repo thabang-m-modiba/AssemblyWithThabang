@@ -225,5 +225,5 @@ IDIV divisor
 
 # Mini Projects
 ## Input and Output
-* Getting data from the user and displaying the data on the terminal.
+1. Getting data from the user and displaying the data on the terminal.
 * 
