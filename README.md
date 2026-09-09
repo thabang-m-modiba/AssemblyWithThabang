@@ -14,3 +14,13 @@ EDX ; Extended Data Register. Extra data storage, multiplication, division and I
 ESI ; Extended Source Index. Points to the source data
 EDI ; Extended Destination Index. Points to the desitination data
 ```
+### Overflow
+* An overflow happens when the result of a calculation is too large (or too small) to fit in the space available in a register.
+* It is more like trying to pour 2 liters of water into a 1 liter bottle. The bottle cannot hold it all, so some of it spills over.
+* An 8-bit register can store values from 0 to 255.
+* The following would result in an overflow:
+```
+MOV AL, 255
+ADD AL, 1
+```
+* So the results wraps around <code> AL = 0 </code> and the CPU sets the Carry Flag (<code>CF</code>)
