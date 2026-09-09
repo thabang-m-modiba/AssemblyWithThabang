@@ -221,3 +221,4 @@ DIV divisor
 IDIV divisor
 ```
 * The result is split with <code>EAX</code> containing the quotient and <code>EDX</code> containing the remainder.
+* See illustration [here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/25f94b12466a6ab271e098f198d93d7e30429d12/Main/IDIV%20Instruction/idiv.asm)
