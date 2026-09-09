@@ -223,6 +223,58 @@ IDIV divisor
 * The result is split with <code>EAX</code> containing the quotient and <code>EDX</code> containing the remainder.
 * See illustration [here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/25f94b12466a6ab271e098f198d93d7e30429d12/Main/IDIV%20Instruction/idiv.asm)
 
+## Branching
+* High-level languages use structured programming techniques to control the flow of applications.
+* Example:
+  1. if statements
+  2. for loops
+  3. while loops
+* Assembly language programs do not have this ability, instead of all these constructs have to be created by hand.
+* The <code>JMP</code> statements allow us to redirect control flow (Equivalent to the GOTO statemen)
+
+## Unconditional Branching - <code>JMP</code> statement
+* The <code>JMP</code> statement/instruction is used to jump unconditionally to a specified label
+```
+; sytax
+JMP label
+```
+* Does modify any flags
+
+### Comparing two items
+* <code>CMP</code> compares a destination and source by performing an implied substraction.
+* The source is substracted from the destination.
+* The result is not stored instead the processor updates the FLAGS register.
+```
+; syntax
+CMP destination, source
+```
+* Every decision us ultimately been implemented using comparisons and jump instructions.
+* <code>CMP</code> does not affect destination and source values.
+
+#### Unsigned Comparions
+```
+JA - Jump if above
+JNBE - Jump if not below or equal
+JAE - Jump if above or equal
+JNB - Jump if not below
+JB - Jump if below
+JNAE - Jump if not above or equal
+JBE - Jump if below or equal
+JNA - Jump if not above
+```
+
+#### Signed Comparisons
+```
+JG - Jump if greater
+JNLE - Jump if not less or equal
+JGE - Jump if greater or equal
+JNL - Jump if not less
+JL - Jump if less
+JNGE - Jump if not greater or equal
+JLE - Jump if less or equal
+JNG - Jump if not greater
+```
+
 # Mini Projects
 ## Input and Output
 1. Getting data from the user and displaying the data on the terminal.
