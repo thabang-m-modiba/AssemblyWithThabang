@@ -24,3 +24,24 @@ MOV AL, 255
 ADD AL, 1
 ```
 * So the results wraps around <code> AL = 0 </code> and the CPU sets the Carry Flag (<code>CF</code>)
+
+### Assembly Code Skeleton
+```
+.386 ; Generate 386 (32-bit) compatible machine code
+.MODEL FLAT ; Use a flat memory model
+
+; Prototype for the ExitProcess function
+ExitProcess PROTO NEAR32 stdcall, dwExitCode:DWORD
+
+.STACK ; Reserve 4096 bytes of stock space
+
+.DATA ; Section for holding "data"
+
+.CODE ; Section for holding the instructions
+
+_start:
+
+    INVOKE ExitProcess, 0 ; Exit this process
+PUBLIC _start ; Export the _start label
+END ; End of assembly file
+```
