@@ -189,3 +189,20 @@ MUL source
 IMUL destination, source, immediate
 ```
 * Check illustrations [Here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/60875c63c89ffdc8ec51884af51c28a7b297c42b/Main/IMUL%20Instruction/imul.asm)
+
+### Division Instructions
+* When working with division it is important to note that we require a 64-bit number.
+* This 64-bit number will be <code>EDX:EAX</code>.
+* <b>Unsigned integer division</b> is simpler to work with since we just need t ensure that <code>EDX</code> has the correct values for the MSB of the 64-bit number.
+* If we have a small inter value, for example 5, then we need to load 5 into <code>EAX</code> and 0 into <code>EDX</code> since the final number needs to be 5 in <code>EDX:EAX</code>
+
+* <b>Signed integer division</b> is a bit more complicated since the sign can be problematic.
+* The sign may have to be extended over <code>EDX</code>, for instance, if <code>EAX</code> contains -5, the sign must be expanded over to <code>EDX</code>.
+* The <code>CBW, CWD and CDG</code> instruction can be used to extend the sign.
+
+#### <code>DIV</code> Instruction
+* Used to divide an unsigned integer
+* The result is split with <code>EAX</code> containing the quotient and <code>EDX</code> containing the remainder.
+```
+DIV divisor
+```
