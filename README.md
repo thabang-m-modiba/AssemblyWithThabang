@@ -358,4 +358,8 @@ myArray DWORD 50 DUP (?)
      $totalAmountEarned = totalInterest/(principleAmount*timeLength)$
 
    * [See code here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/c1adeec890aee587f3321be4f250aa6af54f5e8c/Main/Loop%202/loop2.asm)
+  
+## Arrays:
+1. Adding elements into an array.
+   * [See code Here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/179e25eba5fb214d8a47242f45498cb086b9db65/Main/Arrays%201/array1.asm)
    
