@@ -285,4 +285,11 @@ JNG - Jump if not greater
 ## Jump and Compare Instructions
 1. Get input number from the user. While the number is greater than 0, print "Hello world" and keep decrementing the number.
    * [See code here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/7bd2f8607524b8d30216ce37dadc7f917ce1f73c/Main/Loop%201/loop1.asm)
+  
+## Loops: Simple Interest Calculator
+1. Calculate simple interest by getting input from the user.
+   * Prompt the user for <code>principleAmount</code>, <code>totalInterest</code> and <code>timeLength</code> and calculate the <code>totalAmountEarned</code> from those values using the following the formula:
+     $totalAmountEarned = totalInterest/(principleAmount*timeLength)$
+
+   * [See code here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/c1adeec890aee587f3321be4f250aa6af54f5e8c/Main/Loop%202/loop2.asm)
    
