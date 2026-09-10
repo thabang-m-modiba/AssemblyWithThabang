@@ -277,6 +277,72 @@ JNG - Jump if not greater
 
 * <code>CMP</code> is followed by a jump instruction.
 
+## Direct Addressing
+* Direct Addressing allows data to be placed directly into a memory location.
+* So far this is the method employed to put data into registers or into global variables.
+* Register indirect addressing is an alternate method of addressing memory locations. Analogous to pointers in C/C++.
+* How indirect addressing works:
+  - Load the address of a label into a register
+  - Access the memory location in the register with the []'s
+  - A value will then be written to/read from the memory location
+
+ * This is a way to read or write data using the address stored in a register, rather than referring to the variable name directly.
+ * Here is some syntax illustration:
+```
+; Direct Addressing
+MOV eax, var1 ; Directly access the memory labeled var1
+
+; Indirect addressing
+    ; Instead of using var1, we use a register that holds the address
+    LEA ebx, var1 ; Load address of var1 into ebx
+    MOV eax, [ebx] ; Use the address in ebx to get the value from memory
+```
+### Using the <code>LEA</code> Instruction for indirect addressing
+* <code>LEA</code> is used to load the memory address (not the value) of a variable into the a register.
+```
+LEA register, memory ; Loading the address into memory
+```
+* It does not modify any flags
+* Note that <code>LEA</code> does not read the value at the memory location, it just gets the address only.
+* To dereference the register you use the square brackets [].
+* You can now read/ write data at that memory location using the square brackets.
+
+### Indirect Addressing - Sizing
+* The assembler needs more information about the register size and the data size when using register indirect addressing.
+* It cannot always guess if you are referring to <code>DWORD</code>, <code>WORD</code> or <code>BYTE</code>.
+```
+; Assembler doesn't know the size of zero (how many bytes)
+MOV [eax], 0 ; Will not assemble
+
+; Need to explicitly indicate size of vale being set
+MOV BYTE PTR [eax], 0 ; Moving one byte with value being set
+
+; Same registers need no special syntax
+MOV eax, [ebx]
+ADD eax, [ebx] ; Other instructions work as well
+```
+
+## Arrays
+* Arrays are contiguous ranges of memory that can be used to store information.
+* Each element in the array is the same size.
+* Working with element in an array:
+  - The array has a base address.
+  - Each element in the array has an index.
+* To get an address of an element then the following equation is used:
+  $(address of element) = (base address) + ([index of element]*[size of element])$
+
+* In the <code>.Data</code> section, the following syntax is used:
+```
+; General syntax
+myArray DWORD <num_items> DUP (<initial_value>)
+
+; Declare array of size 10 with all zeros
+myArray DWORD 10 DUP (0)
+
+; Declare array of size 50 but not initialised
+myArray DWORD 50 DUP (?)
+```
+
 # Mini Projects
 ## Input and Output
 1. Getting data from the user and displaying the data on the terminal.
@@ -285,4 +351,11 @@ JNG - Jump if not greater
 ## Jump and Compare Instructions
 1. Get input number from the user. While the number is greater than 0, print "Hello world" and keep decrementing the number.
    * [See code here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/7bd2f8607524b8d30216ce37dadc7f917ce1f73c/Main/Loop%201/loop1.asm)
+  
+## Loops: Simple Interest Calculator
+1. Calculate simple interest by getting input from the user.
+   * Prompt the user for <code>principleAmount</code>, <code>totalInterest</code> and <code>timeLength</code> and calculate the <code>totalAmountEarned</code> from those values using the following the formula:
+     $totalAmountEarned = totalInterest/(principleAmount*timeLength)$
+
+   * [See code here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/c1adeec890aee587f3321be4f250aa6af54f5e8c/Main/Loop%202/loop2.asm)
    
