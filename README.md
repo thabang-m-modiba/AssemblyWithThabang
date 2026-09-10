@@ -362,4 +362,7 @@ myArray DWORD 50 DUP (?)
 ## Arrays:
 1. Adding elements into an array.
    * [See code Here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/179e25eba5fb214d8a47242f45498cb086b9db65/Main/Arrays%201/array1.asm)
+  
+2. Printing elements of an array.
+   * [See code here](https://github.com/thabang-m-modiba/AssemblyWithThabang/blob/bcabc8cbe9ca39b6d88f8eb4493770935dc4783f/Main/Arrays%201/array2.asm)
    
