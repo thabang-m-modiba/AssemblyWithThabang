@@ -343,6 +343,53 @@ myArray DWORD 10 DUP (0)
 myArray DWORD 50 DUP (?)
 ```
 
+## Working with the Stack
+* Why do we need a stack
+  - Function calls
+  - Temporary data
+  - Return information
+  - Local variables
+### Working with the stack
+* The stack is a globally allocated block of memory where you can store items.
+* The stack on an intel machine operates the same as a stack data structure.
+* Each item on the stack is a 1 byte memory location.
+* If a <code>DWORD</code> is placed in the stack  then 4 bytes are used.
+* There are two registers involved when using a stack:
+  - <code>ESP</code> - The stack pointer which points to the top of the stack.
+  - <code>EBP</code> - The base pointer which points at the bottom of the stack.
+ 
+### Instructions for working with the stack
+#### <code>PUSH</code>
+* Places a 32-bit <code>int</code> onto the top of the stack and decreases the value of <code>ESP</code> by 4.
+```
+; Syntax
+PUSH register
+```
+* It does not modify any flag.
+
+#### <code>POP</code>
+* Retrieves a 32-bit <code>int</code> from the stacj and stores it in the specified destination.
+* <code>ESP</code> is increased by 4.
+```
+; Syntax
+POP register
+```
+* It also does not modify any flag.
+
+## Local Variables
+* So far the programs which have been written have used global variables.
+* Local variables avoids having to allocate memory locations ahead of time.
+  - Local variables are saved on the stack
+  - Local variables do not have names
+  - Local variables are referenced using indirect addressing relative to either the <code>ESP</code> or <code>EBP</code>
+* A stack frame is a region on the stack where <code>EBP</code> points to a known location.
+* Location of <code>EBP</code> is not know when the application starts and therefore needs to be set up manually.
+* Local variables are created in this stack frame.
+  - Set up the local stack frame
+  - Reserve space on the stack frame for the local variables
+  - Reference local variables relative to <code>EBP</code>
+  - Destroy the local stack frame
+
 # Mini Projects
 ## Input and Output
 1. Getting data from the user and displaying the data on the terminal.
